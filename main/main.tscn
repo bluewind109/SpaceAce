@@ -1,0 +1,111 @@
+[gd_scene load_steps=11 format=3 uid="uid://doikhx0vpcrd6"]
+
+[ext_resource type="Texture2D" uid="uid://cnasqdftq5eln" path="res://assets/backgrounds/GalaxyUno.png" id="1_j0j3b"]
+[ext_resource type="Script" path="res://main/main.gd" id="1_ophfu"]
+[ext_resource type="Texture2D" uid="uid://crc4qthv5hgvm" path="res://assets/backgrounds/spr_stars01.png" id="2_41315"]
+[ext_resource type="Texture2D" uid="uid://bvrsr3p8t273v" path="res://assets/backgrounds/spr_stars02.png" id="3_yguxl"]
+[ext_resource type="LabelSettings" uid="uid://cf3m1d55c2bgj" path="res://LG_white_72.tres" id="4_lbyt3"]
+[ext_resource type="Texture2D" uid="uid://drcj86de1wvfq" path="res://assets/ui/blue_button00.png" id="5_7c7ay"]
+[ext_resource type="Texture2D" uid="uid://cdvtxxlgoc363" path="res://assets/ui/yellow_button00.png" id="6_6ytto"]
+[ext_resource type="Texture2D" uid="uid://bbw2aw38bttx4" path="res://assets/ui/green_button00.png" id="7_r1b2x"]
+[ext_resource type="LabelSettings" uid="uid://dbk6qqkjtegbq" path="res://GM_white_32.tres" id="8_28eue"]
+[ext_resource type="PackedScene" uid="uid://bivi6m15s2lym" path="res://sun/sun.tscn" id="9_o0pir"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ophfu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BG" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -475.0
+offset_bottom = 477.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_j0j3b")
+
+[node name="BGStar1" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_41315")
+
+[node name="BGStar2" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_yguxl")
+
+[node name="MC" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/MC"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "SPACE ACE"
+label_settings = ExtResource("4_lbyt3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VB - ButtonGroup" type="VBoxContainer" parent="CanvasLayer/MC"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 24
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/MC/VB - ButtonGroup"]
+layout_mode = 2
+texture_normal = ExtResource("5_7c7ay")
+texture_pressed = ExtResource("6_6ytto")
+texture_hover = ExtResource("7_r1b2x")
+
+[node name="Label" type="Label" parent="CanvasLayer/MC/VB - ButtonGroup/PlayButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+label_settings = ExtResource("8_28eue")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/MC/VB - ButtonGroup"]
+layout_mode = 2
+texture_normal = ExtResource("5_7c7ay")
+texture_pressed = ExtResource("6_6ytto")
+texture_hover = ExtResource("7_r1b2x")
+
+[node name="Label" type="Label" parent="CanvasLayer/MC/VB - ButtonGroup/ExitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+label_settings = ExtResource("8_28eue")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sun" parent="." instance=ExtResource("9_o0pir")]
+position = Vector2(24, 24)
+scale = Vector2(0.5, 0.5)
+
+[connection signal="pressed" from="CanvasLayer/MC/VB - ButtonGroup/PlayButton" to="." method="_on_play_button_pressed"]
