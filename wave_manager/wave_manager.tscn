@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://4dkyco5du1tm"]
+
+[ext_resource type="Script" path="res://wave_manager/wave_manager.gd" id="1_6v8eu"]
+
+[sub_resource type="Curve2D" id="Curve2D_eig33"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 157, -45, 0, 0, 0, 0, 155, 513)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_u35ts"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -38, 228, 0, 0, 0, 0, 688, 224)
+}
+point_count = 2
+
+[node name="WaveManager" type="Node2D"]
+script = ExtResource("1_6v8eu")
+
+[node name="Paths" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_eig33")
+
+[node name="Path2D2" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_u35ts")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
