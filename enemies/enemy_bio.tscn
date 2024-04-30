@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://xuca0avlvg3u"]
+
+[ext_resource type="PackedScene" uid="uid://d0mjk8molr32m" path="res://enemies/enemy_basic.tscn" id="1_sbfpl"]
+
+[node name="EnemyBio" instance=ExtResource("1_sbfpl")]
+shoots = true
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+animation = &"biomech_1"

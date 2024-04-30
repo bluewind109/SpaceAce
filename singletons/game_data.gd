@@ -8,6 +8,7 @@ const POWER_UPS = {
 	POWERUP_TYPE.SHIELD: preload("res://assets/misc/shield_gold.png")
 }
 
+const GROUP_PLAYER: String = "player"
 
 
 
