@@ -70,6 +70,18 @@ func shoot() -> void:
 	start_shoot_timer()
 
 
+func make_booms() -> void:
+	for b in booms.get_children():
+		ObjectMaker.create_boom(b.global_position)
+
+func die() -> void:
+	if (_dead): return
+	_dead = true
+	set_process(false)
+	make_booms()
+	queue_free()
+
+
 func _on_laser_timer_timeout():
 	shoot()
 
@@ -89,5 +101,4 @@ func _on_hit_box_area_entered(area):
 
 
 func _on_health_bar_died():
-	set_process(false)
-	queue_free()
+	die()

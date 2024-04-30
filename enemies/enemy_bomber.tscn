@@ -20,6 +20,18 @@ animation = &"bomber_1"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CapsuleShape2D_vxskc")
 
+[node name="Marker2D" type="Marker2D" parent="Booms" index="0"]
+position = Vector2(-12, 15)
+
+[node name="Marker2D2" type="Marker2D" parent="Booms" index="1"]
+position = Vector2(11, -12)
+
+[node name="Marker2D3" type="Marker2D" parent="Booms" index="2"]
+position = Vector2(11, 10)
+
+[node name="Marker2D4" type="Marker2D" parent="Booms" index="3"]
+position = Vector2(-13, -8)
+
 [node name="HealthBar" parent="." index="5"]
 offset_left = -13.0
 offset_top = -34.0
