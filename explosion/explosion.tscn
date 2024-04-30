@@ -55,6 +55,7 @@ libraries = {
 "": SubResource("AnimationLibrary_vwqjx")
 }
 autoplay = "explode"
+speed_scale = 2.0
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 
