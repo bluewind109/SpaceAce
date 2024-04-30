@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctqcm3x2l2sd1"]
+[gd_scene load_steps=9 format=3 uid="uid://ctqcm3x2l2sd1"]
 
 [ext_resource type="Texture2D" uid="uid://dcgbx7dvom4in" path="res://assets/ships/ships_human_1.png" id="1_jltk8"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_u61rg"]
+[ext_resource type="PackedScene" uid="uid://c7q6m5xgdgquu" path="res://base_bullet/player_bullet/player_bullet.tscn" id="2_p4vyt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ifuyn"]
 radius = 13.0
@@ -64,6 +65,7 @@ _data = {
 
 [node name="Player" type="Area2D" groups=["player"]]
 script = ExtResource("1_u61rg")
+bullet_scene = ExtResource("2_p4vyt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_jltk8")
