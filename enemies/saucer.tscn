@@ -199,7 +199,7 @@ transitions = ["Start", "spin", SubResource("AnimationNodeStateMachineTransition
 rotates = false
 script = ExtResource("1_76rjr")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["saucer"]]
 collision_layer = 2
 collision_mask = 5
 

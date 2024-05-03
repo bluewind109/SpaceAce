@@ -62,4 +62,5 @@ func _on_health_bar_died():
 
 
 func _on_area_2d_area_entered(area):
+	if (area.is_in_group(GameData.GROUP_PLAYER)): return
 	health_bar.take_damage(HIT_DAMAGE)
