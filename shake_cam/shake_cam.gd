@@ -12,7 +12,7 @@ func _ready():
 	set_process(false)
 
 
-func _process(delta):
+func _process(_delta):
 	offset = Vector2(
 		_shake_offset.x + get_random_shake_amount(),
 		_shake_offset.y + get_random_shake_amount()

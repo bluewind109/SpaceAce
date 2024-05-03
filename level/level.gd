@@ -5,7 +5,7 @@ func _ready():
 	ScoreManager.reset_score()
 
 
-func _process(delta):
+func _process(_delta):
 	if (Input.is_key_pressed(KEY_Q)):
 		GameManager.load_main_scene()
 		

@@ -44,5 +44,5 @@ func blow_up() -> void:
 	queue_free()
 
 
-func _on_area_entered(area):
+func _on_area_entered(_area):
 	blow_up()

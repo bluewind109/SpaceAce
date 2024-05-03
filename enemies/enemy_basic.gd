@@ -13,6 +13,8 @@ extends PathFollow2D
 @export var kill_score: int = 10
 @export var damage_taken: int = 10
 
+@export var powerup_chance: float = 0.07
+
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var laser_timer = $LaserTimer
 @onready var booms = $Booms
@@ -78,9 +80,16 @@ func make_booms() -> void:
 	for b in booms.get_children():
 		ObjectMaker.create_boom(b.global_position)
 
+
+func create_powerup() -> void:
+	if (randf() < powerup_chance):
+		ObjectMaker.create_random_power_up(global_position)
+
+
 func die() -> void:
 	if (_dead): return
 	_dead = true
+	create_powerup()
 	set_process(false)
 	make_booms()
 	ScoreManager.increment_score(kill_score)
@@ -101,7 +110,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 
 
-func _on_hit_box_area_entered(area):
+func _on_hit_box_area_entered(_area):
 	health_bar.take_damage(damage_taken)
 
 
