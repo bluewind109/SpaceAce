@@ -9,6 +9,7 @@ const POWER_UPS = {
 }
 
 const GROUP_PLAYER: String = "player"
+const GROUP_HOMING_MISSILE: String = "homing_missile"
 
 
 
