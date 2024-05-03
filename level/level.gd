@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready():
-	pass
+	ScoreManager.reset_score()
 
 
 func _process(delta):

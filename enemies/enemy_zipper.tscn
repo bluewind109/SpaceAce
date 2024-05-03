@@ -7,6 +7,7 @@ radius = 8.0
 height = 28.0
 
 [node name="EnemyZipper" instance=ExtResource("1_tvnae")]
+damage_taken = 30
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 animation = &"zipper_1"

@@ -12,6 +12,8 @@ const FIRE_OFFSETS = [0.25, 0.5, 0.75]
 const BOOM_DELAY: float = 0.15
 const HIT_DAMAGE: int = 40
 
+const KILL_SCORE: int = 150
+
 var _shooting: bool =  false
 var _shots_fired: int = 0
 
@@ -47,6 +49,7 @@ func shoot() -> void:
 
 
 func die() -> void:
+	ScoreManager.increment_score(KILL_SCORE)
 	queue_free()
 
 
