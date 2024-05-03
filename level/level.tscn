@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://by8u0ia3w3mja"]
+[gd_scene load_steps=7 format=3 uid="uid://by8u0ia3w3mja"]
 
 [ext_resource type="Script" path="res://level/level.gd" id="1_a0o2g"]
 [ext_resource type="PackedScene" uid="uid://5b0gm168ketx" path="res://level_bg/level_bg.tscn" id="2_ts0g4"]
 [ext_resource type="PackedScene" uid="uid://ctqcm3x2l2sd1" path="res://player/player.tscn" id="3_4irlc"]
 [ext_resource type="PackedScene" uid="uid://4dkyco5du1tm" path="res://wave_manager/wave_manager.tscn" id="4_wbh55"]
 [ext_resource type="PackedScene" uid="uid://bioxh0fo2bkuy" path="res://saucer_manager/saucer_manager.tscn" id="5_f0ko0"]
+[ext_resource type="PackedScene" uid="uid://bkpom28yh88yq" path="res://game_ui/game_ui.tscn" id="6_02qn6"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_a0o2g")
@@ -17,3 +18,7 @@ position = Vector2(341, 421)
 [node name="WaveManager" parent="." instance=ExtResource("4_wbh55")]
 
 [node name="SaucerManager" parent="." instance=ExtResource("5_f0ko0")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameUI" parent="CanvasLayer" instance=ExtResource("6_02qn6")]

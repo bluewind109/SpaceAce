@@ -80,9 +80,9 @@ func on_powerup_hit(power_up: GameData.POWERUP_TYPE) -> void:
 
 
 func _on_area_entered(area):
-	print ("PLAYER HIT: %s, %s" % [
-		area, area.get_groups()
-	])
+	#print ("PLAYER HIT: %s, %s" % [
+		#area, area.get_groups()
+	#])
 	
 	if (area.is_in_group(GameData.GROUP_ENEMY_SHIP) or 
 		area.is_in_group(GameData.GROUP_SAUCER)):
