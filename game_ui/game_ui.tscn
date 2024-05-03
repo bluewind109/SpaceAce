@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_suy4o")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -21,7 +21,7 @@ offset_bottom = 48.0
 grow_horizontal = 2
 color = Color(0.105882, 0.192157, 1, 0.176471)
 
-[node name="MC" type="MarginContainer" parent="ColorRect"]
+[node name="MC" type="MarginContainer" parent="Background"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,15 +31,15 @@ grow_vertical = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_right = 24
 
-[node name="HB" type="HBoxContainer" parent="ColorRect/MC"]
+[node name="HB" type="HBoxContainer" parent="Background/MC"]
 layout_mode = 2
 
-[node name="HealthBar" parent="ColorRect/MC/HB" instance=ExtResource("1_hxhgt")]
+[node name="HealthBar" parent="Background/MC/HB" instance=ExtResource("1_hxhgt")]
 custom_minimum_size = Vector2(150, 18)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="ScoreLabel" type="Label" parent="ColorRect/MC/HB"]
+[node name="ScoreLabel" type="Label" parent="Background/MC/HB"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0000"
@@ -47,4 +47,4 @@ label_settings = ExtResource("2_y4553")
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[connection signal="died" from="ColorRect/MC/HB/HealthBar" to="." method="_on_health_bar_died"]
+[connection signal="died" from="Background/MC/HB/HealthBar" to="." method="_on_health_bar_died"]

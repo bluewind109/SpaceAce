@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://by8u0ia3w3mja"]
+[gd_scene load_steps=9 format=3 uid="uid://by8u0ia3w3mja"]
 
 [ext_resource type="Script" path="res://level/level.gd" id="1_a0o2g"]
 [ext_resource type="PackedScene" uid="uid://5b0gm168ketx" path="res://level_bg/level_bg.tscn" id="2_ts0g4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bioxh0fo2bkuy" path="res://saucer_manager/saucer_manager.tscn" id="5_f0ko0"]
 [ext_resource type="PackedScene" uid="uid://bkpom28yh88yq" path="res://game_ui/game_ui.tscn" id="6_02qn6"]
 [ext_resource type="PackedScene" uid="uid://cnr6eyk82y84u" path="res://shake_cam/shake_cam.tscn" id="7_8y2ge"]
+[ext_resource type="PackedScene" uid="uid://cr6b2dn4tdp2r" path="res://game_over/game_over.tscn" id="7_832uh"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_a0o2g")
@@ -23,6 +24,9 @@ position = Vector2(341, 421)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameUI" parent="CanvasLayer" instance=ExtResource("6_02qn6")]
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("7_832uh")]
+visible = false
 
 [node name="ShakeCam" parent="." instance=ExtResource("7_8y2ge")]
 anchor_mode = 0

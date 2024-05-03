@@ -1,7 +1,7 @@
 extends Control
 
-@onready var health_bar = $ColorRect/MC/HB/HealthBar
-@onready var score_label = $ColorRect/MC/HB/ScoreLabel
+@onready var health_bar = $Background/MC/HB/HealthBar
+@onready var score_label = $Background/MC/HB/ScoreLabel
 
 func _ready():
 	SignalManager.on_player_hit.connect(on_player_hit)
@@ -23,4 +23,3 @@ func on_score_updated(val: int) -> void:
 
 func _on_health_bar_died():
 	SignalManager.on_player_died.emit()
-	GameManager.load_main_scene()
