@@ -17,7 +17,13 @@ func _process(_delta):
 
 func on_player_died() -> void:
 	sound.stop()
-
+	for node in get_children():
+		if (is_instance_valid(node) and node.is_class("Node2D")):
+			ObjectMaker.create_explosion(
+				node.global_position,
+				self
+			)
+			node.queue_free()
 
 
 
